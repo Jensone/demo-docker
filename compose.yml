@@ -1,0 +1,18 @@
+# Ici se trouve la configuration des services
+services:
+  # nextgba est le nom du service (peut être changé)
+  nextgba:
+    # Ici c'est le nom du container (peut être changé) 
+    container_name: nextgba
+    # Ça c'est l'image docker qu'on va utiliser
+    image: ghcr.io/meienberger/nextgba:latest
+    # Afin d'utiliser l'application, on doit exposer le port 3000 (peut être changé) 
+    ports:
+      - 3358:3000
+    # Espace de stockage pour l'application
+    volumes:
+      - ./data/games:/data/games
+
+# Ce fichier est un exemple de configuration de docker-compose.yml
+# Il sera toujours éditer en ce sens et en fonction des besoins de l'application
+# N'hésitez pas à tester la personnalisation de ce fichier avec d'autres services
